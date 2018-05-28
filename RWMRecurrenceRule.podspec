@@ -6,7 +6,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "RWMRecurrenceRule"
-  s.version      = "0.0.1"
+  s.version      = "0.0.2"
   s.summary      = "A library allowing you to create recurrence rules from iCalendar RRULE statements and to iterate the dates of a recurrence rule."
 
   s.description  = <<-DESC

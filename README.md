@@ -88,7 +88,7 @@ Feel free to experiment from Xcode using the project's playground.
     use_frameworks!
 
     target 'YourAppTargetName' do
-        pod 'RWMRecurrenceRule', '~> 0.0.1'
+        pod 'RWMRecurrenceRule', '~> 0.0.2'
     end
     ```
 
@@ -106,7 +106,7 @@ Swift code.
 
   ```swift
   dependencies: [
-      .package(url: "https://github.com/rmaddy/RWMRecurrenceRule.git", from: "0.0.1")
+      .package(url: "https://github.com/rmaddy/RWMRecurrenceRule.git", from: "0.0.2")
   ]
   ```
 
