@@ -1,4 +1,4 @@
-# RWMRecurenceRule
+# RWMRecurrenceRule
 
 Provides support for iCalendar RRULE expressions including an extension to [EventKit][] allowing you to create an [EKRecurrenceRule][] from an RRULE expression and to enumerate the dates of an [EKEvent][].
 
