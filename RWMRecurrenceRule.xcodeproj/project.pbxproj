@@ -105,6 +105,9 @@
 		1DEBECFC20BB3C2A00B45BDA /* CalendarTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTests.swift; sourceTree = "<group>"; };
 		1DEBED0D20BB3D4E00B45BDA /* LICENSE */ = {isa = PBXFileReference; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
 		1DEBED0E20BB3D4E00B45BDA /* RWMRecurrenceRule.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; path = RWMRecurrenceRule.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1DEBED5120BB5F8F00B45BDA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		1DEBED9620BB6FFD00B45BDA /* installation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = installation.png; sourceTree = "<group>"; };
+		1DEBED9720BB80EF00B45BDA /* RWMRecurrenceRule.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RWMRecurrenceRule.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,7 +154,10 @@
 		1DEBEC5520BB385600B45BDA = {
 			isa = PBXGroup;
 			children = (
+				1DEBED9020BB6FFD00B45BDA /* Documentation */,
+				1DEBED5120BB5F8F00B45BDA /* README.md */,
 				1DEBED0D20BB3D4E00B45BDA /* LICENSE */,
+				1DEBED9720BB80EF00B45BDA /* RWMRecurrenceRule.playground */,
 				1DEBED0E20BB3D4E00B45BDA /* RWMRecurrenceRule.podspec */,
 				1DEBECCB20BB397100B45BDA /* RWMRecurrenceRule */,
 				1DEBECF420BB3C2A00B45BDA /* RWMRecurrenceRuleTests */,
@@ -243,6 +249,22 @@
 				1DEBECFC20BB3C2A00B45BDA /* CalendarTests.swift */,
 			);
 			path = RWMRecurrenceRuleTests;
+			sourceTree = "<group>";
+		};
+		1DEBED9020BB6FFD00B45BDA /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				1DEBED9120BB6FFD00B45BDA /* Resources */,
+			);
+			path = Documentation;
+			sourceTree = "<group>";
+		};
+		1DEBED9120BB6FFD00B45BDA /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1DEBED9620BB6FFD00B45BDA /* installation.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

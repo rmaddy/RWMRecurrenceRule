@@ -2,6 +2,11 @@
 
 Provides support for iCalendar RRULE expressions including an extension to [EventKit][https://developer.apple.com/documentation/eventkit] allowing you to create an [EKRecurrenceRule][https://developer.apple.com/documentation/eventkit/ekrecurrencerule] from an RRULE expression and to enumerate the dates of an [EKEvent][https://developer.apple.com/documentation/eventkit/ekevent].
 
+For complete details about iCalendar RRULE expressions, see the [Format Definition][https://icalendar.org/iCalendar-RFC-5545/3-3-10-recurrence-rule.html] and [examples][https://icalendar.org/iCalendar-RFC-5545/3-8-5-3-recurrence-rule.html] at [iCalendar.org][https://icalendar.org/].
+
+Note that you do not need to make any use of RRULE expressions to use this framework. If you just want to enumerate
+the dates of an EKEvent, you can this framework to do so without any use or knowledge of RRULE syntax.
+
 RWMRecurrenceRule can be used with iOS 9.0 and later, macOS 10.12 and later, and watchOS 2.0 and later.
 
 ## Usage
@@ -10,7 +15,10 @@ RWMRecurrenceRule can be used with iOS 9.0 and later, macOS 10.12 and later, and
 import EventKit
 import RWMRecurrenceRule
 
+// TODO - more coming soon
 ```
+
+Feel free to experiment from Xcode using the project's playground.
 
 ## Installation
 
@@ -72,7 +80,7 @@ To install RWNRecurrenceRule as an Xcode sub-project:
  1. Drag the **RWMRecurrenceRule.xcodeproj** file into your own project.
     ([Submodule][], clone, or [download][] the project first.)
 
-    ![Installation Screen Shot](Documentation/Resources/installation@2x.png)
+    ![Installation Screen Shot](Documentation/installation/installation.png)
 
  2. In your target’s **General** tab, click the **+** button under **Linked
     Frameworks and Libraries**.
@@ -95,4 +103,13 @@ device:
 [Xcode]: https://developer.apple.com/xcode/downloads/
 [Submodule]: http://git-scm.com/book/en/Git-Tools-Submodules
 [download]: https://github.com/rmaddy/RWMRecurrenceRule/archive/master.zip
+
+## Issues
+
+If you find any issues with RWMRecurrenceRule, please [open an issue][https://github.com/rmaddy/RWMRecurrenceRule/issues/new]
+
+## License
+
+RWMRecurrenceRule is available under the MIT license. See [the LICENSE
+file](./LICENSE.txt) for more information.
 

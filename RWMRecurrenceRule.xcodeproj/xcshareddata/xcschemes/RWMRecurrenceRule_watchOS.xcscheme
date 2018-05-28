@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "1DEBEC9920BB38DD00B45BDA"
-               BuildableName = "RWMRecurrenceRule_watchOS.framework"
+               BuildableName = "RWMRecurrenceRule.framework"
                BlueprintName = "RWMRecurrenceRule_watchOS"
                ReferencedContainer = "container:RWMRecurrenceRule.xcodeproj">
             </BuildableReference>
@@ -46,7 +46,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1DEBEC9920BB38DD00B45BDA"
-            BuildableName = "RWMRecurrenceRule_watchOS.framework"
+            BuildableName = "RWMRecurrenceRule.framework"
             BlueprintName = "RWMRecurrenceRule_watchOS"
             ReferencedContainer = "container:RWMRecurrenceRule.xcodeproj">
          </BuildableReference>
@@ -64,7 +64,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "1DEBEC9920BB38DD00B45BDA"
-            BuildableName = "RWMRecurrenceRule_watchOS.framework"
+            BuildableName = "RWMRecurrenceRule.framework"
             BlueprintName = "RWMRecurrenceRule_watchOS"
             ReferencedContainer = "container:RWMRecurrenceRule.xcodeproj">
          </BuildableReference>

@@ -6,7 +6,7 @@
 //  Copyright © 2018 Maddysoft. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for RWMRecurrenceRule.
 FOUNDATION_EXPORT double RWMRecurrenceRuleVersionNumber;

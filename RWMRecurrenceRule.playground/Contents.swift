@@ -1,5 +1,6 @@
-//: Playground - noun: a place where people can play
+// Note: Run this playground from within the RWMRecurrenceRule project.
 
-import UIKit
+import Foundation
+import RWMRecurrenceRule
 
-var str = "Hello, playground"
+// TODO - coming soon
