@@ -20,6 +20,9 @@ public class RWMRuleScheduler {
 
     var mode: Mode = .standard
 
+    public init() {
+    }
+
     /// Enumerates the dates of the recurrence rule.
     ///
     /// Some more here.

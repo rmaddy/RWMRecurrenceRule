@@ -239,11 +239,11 @@
 		1DEBECF420BB3C2A00B45BDA /* RWMRecurrenceRuleTests */ = {
 			isa = PBXGroup;
 			children = (
-				1DEBECF520BB3C2A00B45BDA /* RWMDailyTests.swift */,
-				1DEBECF620BB3C2A00B45BDA /* RWMYearlyTests.swift */,
 				1DEBECF720BB3C2A00B45BDA /* RWMRecurrenceRuleBase.swift */,
+				1DEBECF520BB3C2A00B45BDA /* RWMDailyTests.swift */,
 				1DEBECF820BB3C2A00B45BDA /* RWMWeeklyTests.swift */,
 				1DEBECF920BB3C2A00B45BDA /* RWMMonthlyTests.swift */,
+				1DEBECF620BB3C2A00B45BDA /* RWMYearlyTests.swift */,
 				1DEBECFA20BB3C2A00B45BDA /* RWMEventKitTests.swift */,
 				1DEBECFB20BB3C2A00B45BDA /* RWMSpecTests.swift */,
 				1DEBECFC20BB3C2A00B45BDA /* CalendarTests.swift */,

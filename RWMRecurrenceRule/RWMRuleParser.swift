@@ -17,6 +17,9 @@ public class RWMRuleParser {
         return df
     }()
 
+    public init() {
+    }
+
     /// Compares two RRULE strings to see if they have the same components. The components do not need to be in the
     /// same order. Any `UNTIL` clause is ignored since the date can be in a different format.
     ///

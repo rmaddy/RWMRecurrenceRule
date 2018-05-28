@@ -5,7 +5,7 @@ Provides support for iCalendar RRULE expressions including an extension to [Even
 For complete details about iCalendar RRULE expressions, see the [Format Definition][] and [examples][] at [iCalendar.org][].
 
 Note that you do not need to make any use of RRULE expressions to use this framework. If you just want to enumerate
-the dates of an EKEvent, you can this framework to do so without any use or knowledge of RRULE syntax.
+the dates of an EKEvent, you can use this framework to do so without any use or knowledge of RRULE syntax.
 
 RWMRecurrenceRule can be used with iOS 9.0 and later, macOS 10.12 and later, and watchOS 2.0 and later.
 
@@ -15,11 +15,52 @@ RWMRecurrenceRule can be used with iOS 9.0 and later, macOS 10.12 and later, and
 
 ## Usage
 
+This first example shows how you can enumerate the dates of some events in your calendar. This
+`listDates` function would need to be called after gaining permission to access the event store.
+
 ```swift
 import EventKit
 import RWMRecurrenceRule
 
-// TODO - more coming soon
+func listDates(from store: EKEventStore) {
+    let start = Date()
+    let end = Calendar.current.date(byAdding: .month, value: 3, to: start)!
+    // Get events from the next 3 months
+    let pred = store.predicateForEvents(withStart: start, end: end, calendars: nil)
+    // Iterate through the events
+    store.enumerateEvents(matching: pred) { (event, stop) in
+        print("Event: \(event.title)")
+        var count = 0
+        // Iterate through the first 20 occurrences of the event
+        event.enumerateDates { (date, stop) in
+            print(date)
+            count += 1
+            if count > 20 {
+                stop = true
+            }
+        }
+    }
+}
+```
+
+This example shows how to create an `RWMRecurrenceRule` from an RRULE and then list its dates.
+
+```swift
+import EventKit
+import RWMRecurrenceRule
+
+// Every 4 days, 10 occurrences
+let rule = "RRULE:FREQ=DAILY;INTERVAL=4;COUNT=10"
+let parser = RWMRuleParser()
+if let rules = parser.parse(rule: rule) {
+    let scheduler = RWMRuleScheduler()
+    let start = Date()
+    scheduler.enumerateDates(with: rules, startingFrom: start, using: { (date, stop) in
+        if let date = date {
+            print(date)
+        }
+    })
+}
 ```
 
 Feel free to experiment from Xcode using the project's playground.
