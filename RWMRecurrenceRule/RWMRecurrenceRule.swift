@@ -128,25 +128,25 @@ public struct RWMRecurrenceDayOfWeek: Equatable {
 /// The `RWMRecurrenceRule` class is used to describe the recurrence pattern for a recurring event.
 public struct RWMRecurrenceRule: Equatable {
     /// The frequency of the recurrence rule.
-    let frequency: RWMRecurrenceFrequency
+    public let frequency: RWMRecurrenceFrequency
     /// Specifies how often the recurrence rule repeats over the unit of time indicated by its frequency. For example, a recurrence rule with a frequency type of `.weekly` and an interval of `2` repeats every two weeks.
-    let interval: Int?
+    public let interval: Int?
     /// Indicates which day of the week the recurrence rule treats as the first day of the week. No value indicates that this property is not set for the recurrence rule.
-    let firstDayOfTheWeek: RWMWeekday?
+    public let firstDayOfTheWeek: RWMWeekday?
     /// The days of the week associated with the recurrence rule, as an array of `RWMRecurrenceDayOfWeek` objects.
-    let daysOfTheWeek: [RWMRecurrenceDayOfWeek]?
+    public let daysOfTheWeek: [RWMRecurrenceDayOfWeek]?
     /// The days of the month associated with the recurrence rule, as an array of `Int`. Values can be from 1 to 31 and from -1 to -31. This property value is invalid with a frequency type of `.weekly`.
-    let daysOfTheMonth: [Int]?
+    public let daysOfTheMonth: [Int]?
     /// The days of the year associated with the recurrence rule, as an array of `Int`. Values can be from 1 to 366 and from -1 to -366. This property value is valid only for recurrence rules initialized with a frequency type of `.yearly`.
-    let daysOfTheYear: [Int]?
+    public let daysOfTheYear: [Int]?
     /// The weeks of the year associated with the recurrence rule, as an array of `Int` objects. Values can be from 1 to 53 and from -1 to -53. This property value is valid only for recurrence rules initialized with specific weeks of the year and a frequency type of `.yearly`.
-    let weeksOfTheYear: [Int]?
+    public let weeksOfTheYear: [Int]?
     /// The months of the year associated with the recurrence rule, as an array of `Int` objects. Values can be from 1 to 12. This property value is valid only for recurrence rules initialized with specific months of the year and a frequency type of `.yearly`.
-    let monthsOfTheYear: [Int]?
+    public let monthsOfTheYear: [Int]?
     /// An array of ordinal numbers that filters which recurrences to include in the recurrence rule’s frequency. For example, a yearly recurrence rule that has a daysOfTheWeek value that specifies Monday through Friday, and a setPositions array containing 2 and -1, occurs only on the second weekday and last weekday of every year.
-    let setPositions: [Int]?
+    public let setPositions: [Int]?
     /// Indicates when the recurrence rule ends. This can be represented by an end date or a number of occurrences.
-    let recurrenceEnd: RWMRecurrenceEnd?
+    public let recurrenceEnd: RWMRecurrenceEnd?
 
     /// Initializes and returns a simple recurrence rule with a given frequency, interval, and end.
     ///
