@@ -13,7 +13,6 @@ import EventKit
 
 class RWMRecurrenceRuleBase: XCTestCase {
     let calendar = Calendar(identifier: .gregorian)
-    let scheduler = RWMRuleScheduler()
     let formatter: DateFormatter = {
         let res = DateFormatter()
         res.locale = Locale(identifier: "en_US_POSIX")
@@ -22,10 +21,11 @@ class RWMRecurrenceRuleBase: XCTestCase {
         return res
     }()
 
-    func run(rule: String, start: Date, max: Int = 200, results: [String]) {
+    func run(rule: String, mode: RWMRuleScheduler.Mode = .standard, start: Date, max: Int = 200, exclusionDates: [Date]? = nil, results: [String]) {
         run(rule: rule) { (rule) in
             var dates = [Date]()
-            scheduler.enumerateDates(with: rule, startingFrom: start, using: { (date, stop) in
+            let scheduler = RWMRuleScheduler(rule: rule, exclusionDates: exclusionDates, mode: mode)
+            scheduler.enumerateDates(startingFrom: start, using: { (date, stop) in
                 if let date = date {
                     dates.append(date)
                     if dates.count >= max {
@@ -42,7 +42,8 @@ class RWMRecurrenceRuleBase: XCTestCase {
     func run(rule: String, start: Date, last: Date? = nil, count: Int, max: Int = 200) {
         run(rule: rule) { (rule) in
             var dates = [Date]()
-            scheduler.enumerateDates(with: rule, startingFrom: start, using: { (date, stop) in
+            let scheduler = RWMRuleScheduler(rule: rule)
+            scheduler.enumerateDates(startingFrom: start, using: { (date, stop) in
                 if let date = date {
                     dates.append(date)
                     if dates.count >= max {

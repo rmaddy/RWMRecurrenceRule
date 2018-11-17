@@ -278,4 +278,28 @@ class RWMDailyTests: RWMRecurrenceRuleBase {
         )
     }
 
+    func testDaily19() {
+        // Start 20180517T090000
+        // Daily with with exdates. Should give several consecutive days at the same time
+        let start = calendar.date(from: DateComponents(year: 2018, month: 5, day: 17, hour: 9))!
+        let exclusionDate = calendar.date(from: DateComponents(year: 2018, month: 5, day: 18, hour: 9))!
+        run(rule: "RRULE:FREQ=DAILY", start: start, max: 10, exclusionDates: [exclusionDate], results:
+            ["2018-05-17T09:00:00", "2018-05-19T09:00:00", "2018-05-20T09:00:00", "2018-05-21T09:00:00",
+             "2018-05-22T09:00:00", "2018-05-23T09:00:00", "2018-05-24T09:00:00", "2018-05-25T09:00:00",
+             "2018-05-26T09:00:00", "2018-05-27T09:00:00"]
+        )
+    }
+
+    func testDaily20() {
+        // Start 20180517T090000
+        // Daily with with exdates. Should give several consecutive days at the same time
+        let start = calendar.date(from: DateComponents(year: 2018, month: 5, day: 17, hour: 9))!
+        let exclusionDate = start
+        run(rule: "RRULE:FREQ=DAILY;COUNT=10", start: start, exclusionDates: [exclusionDate], results:
+            ["2018-05-18T09:00:00", "2018-05-19T09:00:00", "2018-05-20T09:00:00", "2018-05-21T09:00:00",
+             "2018-05-22T09:00:00", "2018-05-23T09:00:00", "2018-05-24T09:00:00", "2018-05-25T09:00:00",
+             "2018-05-26T09:00:00", "2018-05-27T09:00:00"]
+        )
+    }
+
 }

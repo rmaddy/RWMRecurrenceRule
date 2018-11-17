@@ -145,4 +145,28 @@ class RWMWeeklyTests: RWMRecurrenceRuleBase {
              "2028-06-06T09:00:00", "2028-06-27T09:00:00", "2029-06-19T09:00:00", "2030-06-11T09:00:00"]
         )
     }
+
+    func testWeekly12() {
+        // Start 20181117T090000
+        // Weekly with with exdates.
+        let start = calendar.date(from: DateComponents(year: 2018, month: 11, day: 17, hour: 9))!
+        let exclusionDate = calendar.date(from: DateComponents(year: 2018, month: 11, day: 24, hour: 9))!
+        run(rule: "RRULE:FREQ=WEEKLY", start: start, max: 10, exclusionDates: [exclusionDate], results:
+            ["2018-11-17T09:00:00", "2018-12-01T09:00:00", "2018-12-08T09:00:00", "2018-12-15T09:00:00",
+             "2018-12-22T09:00:00", "2018-12-29T09:00:00", "2019-01-05T09:00:00", "2019-01-12T09:00:00",
+             "2019-01-19T09:00:00", "2019-01-26T09:00:00"]
+        )
+    }
+
+    func testWeekly13() {
+        // Start 20181117T090000
+        // Weekly with with exdates.
+        let start = calendar.date(from: DateComponents(year: 2018, month: 11, day: 17, hour: 9))!
+        let exclusionDate = start
+        run(rule: "RRULE:FREQ=WEEKLY;COUNT=10", start: start, exclusionDates: [exclusionDate], results:
+            ["2018-11-24T09:00:00", "2018-12-01T09:00:00", "2018-12-08T09:00:00", "2018-12-15T09:00:00",
+             "2018-12-22T09:00:00", "2018-12-29T09:00:00", "2019-01-05T09:00:00", "2019-01-12T09:00:00",
+             "2019-01-19T09:00:00", "2019-01-26T09:00:00"]
+        )
+    }
 }

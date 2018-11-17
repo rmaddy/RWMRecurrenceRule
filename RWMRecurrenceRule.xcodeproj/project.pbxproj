@@ -58,6 +58,31 @@
 		1DEBED0A20BB3C2A00B45BDA /* RWMSpecTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEBECFB20BB3C2A00B45BDA /* RWMSpecTests.swift */; };
 		1DEBED0B20BB3C2A00B45BDA /* CalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEBECFC20BB3C2A00B45BDA /* CalendarTests.swift */; };
 		1DEBED0C20BB3C2A00B45BDA /* CalendarTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1DEBECFC20BB3C2A00B45BDA /* CalendarTests.swift */; };
+		550FEB5F21A030DE00FF5F38 /* RWMRuleIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB5E21A030DE00FF5F38 /* RWMRuleIterator.swift */; };
+		550FEB6121A0310800FF5F38 /* RWMRuleDailyIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB6021A0310800FF5F38 /* RWMRuleDailyIterator.swift */; };
+		550FEB6221A0329600FF5F38 /* RWMRuleIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB5E21A030DE00FF5F38 /* RWMRuleIterator.swift */; };
+		550FEB6321A0329700FF5F38 /* RWMRuleIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB5E21A030DE00FF5F38 /* RWMRuleIterator.swift */; };
+		550FEB6421A0329700FF5F38 /* RWMRuleIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB5E21A030DE00FF5F38 /* RWMRuleIterator.swift */; };
+		550FEB6521A0329800FF5F38 /* RWMRuleIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB5E21A030DE00FF5F38 /* RWMRuleIterator.swift */; };
+		550FEB6621A0329C00FF5F38 /* RWMRuleDailyIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB6021A0310800FF5F38 /* RWMRuleDailyIterator.swift */; };
+		550FEB6721A0329D00FF5F38 /* RWMRuleDailyIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB6021A0310800FF5F38 /* RWMRuleDailyIterator.swift */; };
+		550FEB6821A0329E00FF5F38 /* RWMRuleDailyIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB6021A0310800FF5F38 /* RWMRuleDailyIterator.swift */; };
+		550FEB6921A0329E00FF5F38 /* RWMRuleDailyIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB6021A0310800FF5F38 /* RWMRuleDailyIterator.swift */; };
+		550FEB6B21A0353D00FF5F38 /* RWMRuleWeeklyIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB6A21A0353D00FF5F38 /* RWMRuleWeeklyIterator.swift */; };
+		550FEB6D21A0358B00FF5F38 /* RWMRuleMonthlyIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB6C21A0358B00FF5F38 /* RWMRuleMonthlyIterator.swift */; };
+		550FEB6E21A035A100FF5F38 /* RWMRuleWeeklyIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB6A21A0353D00FF5F38 /* RWMRuleWeeklyIterator.swift */; };
+		550FEB6F21A035A100FF5F38 /* RWMRuleWeeklyIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB6A21A0353D00FF5F38 /* RWMRuleWeeklyIterator.swift */; };
+		550FEB7021A035A200FF5F38 /* RWMRuleWeeklyIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB6A21A0353D00FF5F38 /* RWMRuleWeeklyIterator.swift */; };
+		550FEB7121A035A200FF5F38 /* RWMRuleWeeklyIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB6A21A0353D00FF5F38 /* RWMRuleWeeklyIterator.swift */; };
+		550FEB7221A035A600FF5F38 /* RWMRuleMonthlyIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB6C21A0358B00FF5F38 /* RWMRuleMonthlyIterator.swift */; };
+		550FEB7321A035A600FF5F38 /* RWMRuleMonthlyIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB6C21A0358B00FF5F38 /* RWMRuleMonthlyIterator.swift */; };
+		550FEB7421A035A700FF5F38 /* RWMRuleMonthlyIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB6C21A0358B00FF5F38 /* RWMRuleMonthlyIterator.swift */; };
+		550FEB7521A035A700FF5F38 /* RWMRuleMonthlyIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB6C21A0358B00FF5F38 /* RWMRuleMonthlyIterator.swift */; };
+		550FEB7721A035EF00FF5F38 /* RWMRuleYearlyIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB7621A035EF00FF5F38 /* RWMRuleYearlyIterator.swift */; };
+		550FEB7821A035EF00FF5F38 /* RWMRuleYearlyIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB7621A035EF00FF5F38 /* RWMRuleYearlyIterator.swift */; };
+		550FEB7921A035EF00FF5F38 /* RWMRuleYearlyIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB7621A035EF00FF5F38 /* RWMRuleYearlyIterator.swift */; };
+		550FEB7A21A035EF00FF5F38 /* RWMRuleYearlyIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB7621A035EF00FF5F38 /* RWMRuleYearlyIterator.swift */; };
+		550FEB7B21A035EF00FF5F38 /* RWMRuleYearlyIterator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 550FEB7621A035EF00FF5F38 /* RWMRuleYearlyIterator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +133,11 @@
 		1DEBED5120BB5F8F00B45BDA /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		1DEBED9620BB6FFD00B45BDA /* installation.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = installation.png; sourceTree = "<group>"; };
 		1DEBED9720BB80EF00B45BDA /* RWMRecurrenceRule.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = RWMRecurrenceRule.playground; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		550FEB5E21A030DE00FF5F38 /* RWMRuleIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RWMRuleIterator.swift; sourceTree = "<group>"; };
+		550FEB6021A0310800FF5F38 /* RWMRuleDailyIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RWMRuleDailyIterator.swift; sourceTree = "<group>"; };
+		550FEB6A21A0353D00FF5F38 /* RWMRuleWeeklyIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RWMRuleWeeklyIterator.swift; sourceTree = "<group>"; };
+		550FEB6C21A0358B00FF5F38 /* RWMRuleMonthlyIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RWMRuleMonthlyIterator.swift; sourceTree = "<group>"; };
+		550FEB7621A035EF00FF5F38 /* RWMRuleYearlyIterator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RWMRuleYearlyIterator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +255,7 @@
 		1DEBECCB20BB397100B45BDA /* RWMRecurrenceRule */ = {
 			isa = PBXGroup;
 			children = (
+				550FEB5D21A030C700FF5F38 /* Iterators */,
 				1DEBECCC20BB397100B45BDA /* RWMRuleParser.swift */,
 				1DEBECCD20BB397100B45BDA /* RWMRecurrenceRule.swift */,
 				1DEBECCE20BB397100B45BDA /* RWMRuleScheduler.swift */,
@@ -265,6 +296,18 @@
 				1DEBED9620BB6FFD00B45BDA /* installation.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		550FEB5D21A030C700FF5F38 /* Iterators */ = {
+			isa = PBXGroup;
+			children = (
+				550FEB5E21A030DE00FF5F38 /* RWMRuleIterator.swift */,
+				550FEB6021A0310800FF5F38 /* RWMRuleDailyIterator.swift */,
+				550FEB6A21A0353D00FF5F38 /* RWMRuleWeeklyIterator.swift */,
+				550FEB6C21A0358B00FF5F38 /* RWMRuleMonthlyIterator.swift */,
+				550FEB7621A035EF00FF5F38 /* RWMRuleYearlyIterator.swift */,
+			);
+			path = Iterators;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -480,11 +523,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				550FEB6121A0310800FF5F38 /* RWMRuleDailyIterator.swift in Sources */,
 				1DEBECEF20BB397100B45BDA /* Calendar+RWM.swift in Sources */,
 				1DEBECDD20BB397100B45BDA /* RWMRuleScheduler.swift in Sources */,
+				550FEB5F21A030DE00FF5F38 /* RWMRuleIterator.swift in Sources */,
 				1DEBECD820BB397100B45BDA /* RWMRecurrenceRule.swift in Sources */,
 				1DEBECD320BB397100B45BDA /* RWMRuleParser.swift in Sources */,
+				550FEB7721A035EF00FF5F38 /* RWMRuleYearlyIterator.swift in Sources */,
+				550FEB6D21A0358B00FF5F38 /* RWMRuleMonthlyIterator.swift in Sources */,
 				1DEBECE520BB397100B45BDA /* EKEvent+RWM.swift in Sources */,
+				550FEB6B21A0353D00FF5F38 /* RWMRuleWeeklyIterator.swift in Sources */,
 				1DEBECEA20BB397100B45BDA /* EKRecurrenceRule+RWM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -493,18 +541,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				550FEB6621A0329C00FF5F38 /* RWMRuleDailyIterator.swift in Sources */,
 				1DEBECEB20BB397100B45BDA /* EKRecurrenceRule+RWM.swift in Sources */,
 				1DEBECFD20BB3C2A00B45BDA /* RWMDailyTests.swift in Sources */,
 				1DEBED0920BB3C2A00B45BDA /* RWMSpecTests.swift in Sources */,
 				1DEBECD420BB397100B45BDA /* RWMRuleParser.swift in Sources */,
 				1DEBED0720BB3C2A00B45BDA /* RWMEventKitTests.swift in Sources */,
+				550FEB7221A035A600FF5F38 /* RWMRuleMonthlyIterator.swift in Sources */,
 				1DEBED0520BB3C2A00B45BDA /* RWMMonthlyTests.swift in Sources */,
 				1DEBED0320BB3C2A00B45BDA /* RWMWeeklyTests.swift in Sources */,
 				1DEBECE620BB397100B45BDA /* EKEvent+RWM.swift in Sources */,
+				550FEB7821A035EF00FF5F38 /* RWMRuleYearlyIterator.swift in Sources */,
+				550FEB6E21A035A100FF5F38 /* RWMRuleWeeklyIterator.swift in Sources */,
 				1DEBECFF20BB3C2A00B45BDA /* RWMYearlyTests.swift in Sources */,
 				1DEBECDE20BB397100B45BDA /* RWMRuleScheduler.swift in Sources */,
 				1DEBECF020BB397100B45BDA /* Calendar+RWM.swift in Sources */,
 				1DEBECD920BB397100B45BDA /* RWMRecurrenceRule.swift in Sources */,
+				550FEB6221A0329600FF5F38 /* RWMRuleIterator.swift in Sources */,
 				1DEBED0B20BB3C2A00B45BDA /* CalendarTests.swift in Sources */,
 				1DEBED0120BB3C2A00B45BDA /* RWMRecurrenceRuleBase.swift in Sources */,
 			);
@@ -514,11 +567,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				550FEB6721A0329D00FF5F38 /* RWMRuleDailyIterator.swift in Sources */,
 				1DEBECF120BB397100B45BDA /* Calendar+RWM.swift in Sources */,
 				1DEBECDF20BB397100B45BDA /* RWMRuleScheduler.swift in Sources */,
+				550FEB6321A0329700FF5F38 /* RWMRuleIterator.swift in Sources */,
 				1DEBECDA20BB397100B45BDA /* RWMRecurrenceRule.swift in Sources */,
 				1DEBECD520BB397100B45BDA /* RWMRuleParser.swift in Sources */,
+				550FEB7921A035EF00FF5F38 /* RWMRuleYearlyIterator.swift in Sources */,
+				550FEB7321A035A600FF5F38 /* RWMRuleMonthlyIterator.swift in Sources */,
 				1DEBECE720BB397100B45BDA /* EKEvent+RWM.swift in Sources */,
+				550FEB6F21A035A100FF5F38 /* RWMRuleWeeklyIterator.swift in Sources */,
 				1DEBECEC20BB397100B45BDA /* EKRecurrenceRule+RWM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -527,18 +585,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				550FEB6821A0329E00FF5F38 /* RWMRuleDailyIterator.swift in Sources */,
 				1DEBECED20BB397100B45BDA /* EKRecurrenceRule+RWM.swift in Sources */,
 				1DEBECFE20BB3C2A00B45BDA /* RWMDailyTests.swift in Sources */,
 				1DEBED0A20BB3C2A00B45BDA /* RWMSpecTests.swift in Sources */,
 				1DEBECD620BB397100B45BDA /* RWMRuleParser.swift in Sources */,
 				1DEBED0820BB3C2A00B45BDA /* RWMEventKitTests.swift in Sources */,
+				550FEB7421A035A700FF5F38 /* RWMRuleMonthlyIterator.swift in Sources */,
 				1DEBED0620BB3C2A00B45BDA /* RWMMonthlyTests.swift in Sources */,
 				1DEBED0420BB3C2A00B45BDA /* RWMWeeklyTests.swift in Sources */,
 				1DEBECE820BB397100B45BDA /* EKEvent+RWM.swift in Sources */,
+				550FEB7A21A035EF00FF5F38 /* RWMRuleYearlyIterator.swift in Sources */,
+				550FEB7021A035A200FF5F38 /* RWMRuleWeeklyIterator.swift in Sources */,
 				1DEBED0020BB3C2A00B45BDA /* RWMYearlyTests.swift in Sources */,
 				1DEBECE020BB397100B45BDA /* RWMRuleScheduler.swift in Sources */,
 				1DEBECF220BB397100B45BDA /* Calendar+RWM.swift in Sources */,
 				1DEBECDB20BB397100B45BDA /* RWMRecurrenceRule.swift in Sources */,
+				550FEB6421A0329700FF5F38 /* RWMRuleIterator.swift in Sources */,
 				1DEBED0C20BB3C2A00B45BDA /* CalendarTests.swift in Sources */,
 				1DEBED0220BB3C2A00B45BDA /* RWMRecurrenceRuleBase.swift in Sources */,
 			);
@@ -548,11 +611,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				550FEB6921A0329E00FF5F38 /* RWMRuleDailyIterator.swift in Sources */,
 				1DEBECF320BB397100B45BDA /* Calendar+RWM.swift in Sources */,
 				1DEBECE120BB397100B45BDA /* RWMRuleScheduler.swift in Sources */,
+				550FEB6521A0329800FF5F38 /* RWMRuleIterator.swift in Sources */,
 				1DEBECDC20BB397100B45BDA /* RWMRecurrenceRule.swift in Sources */,
 				1DEBECD720BB397100B45BDA /* RWMRuleParser.swift in Sources */,
+				550FEB7B21A035EF00FF5F38 /* RWMRuleYearlyIterator.swift in Sources */,
+				550FEB7521A035A700FF5F38 /* RWMRuleMonthlyIterator.swift in Sources */,
 				1DEBECE920BB397100B45BDA /* EKEvent+RWM.swift in Sources */,
+				550FEB7121A035A200FF5F38 /* RWMRuleWeeklyIterator.swift in Sources */,
 				1DEBECEE20BB397100B45BDA /* EKRecurrenceRule+RWM.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
