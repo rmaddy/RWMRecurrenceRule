@@ -458,6 +458,141 @@ class RWMYearlyTests: RWMRecurrenceRuleBase {
         )
     }
 
+    // MARK: - With EXDATEs
+
+    func testYearly38() {
+        // Start 20180517T090000
+        // Yearly with no BYxxx clauses with exdate.
+        let start = calendar.date(from: DateComponents(year: 2018, month: 5, day: 17, hour: 9))!
+        let exclusionDate = calendar.date(from: DateComponents(year: 2018, month: 5, day: 17, hour: 9))!
+        run(rule: "RRULE:FREQ=YEARLY;COUNT=3", start: start, exclusionDates: [exclusionDate], results:
+            ["2019-05-17T09:00:00", "2020-05-17T09:00:00", "2021-05-17T09:00:00"])
+    }
+
+    func testYearly39() {
+        // Start 20180517T090000
+        // Yearly with no BYxxx clauses with exdate without COUNT
+        let start = calendar.date(from: DateComponents(year: 2018, month: 5, day: 17, hour: 9))!
+        let exclusionDate = calendar.date(from: DateComponents(year: 2018, month: 5, day: 17, hour: 9))!
+        run(rule: "RRULE:FREQ=YEARLY", start: start, max: 3, exclusionDates: [exclusionDate], results:
+            ["2019-05-17T09:00:00", "2020-05-17T09:00:00", "2021-05-17T09:00:00"])
+    }
+
+    func testYearly40() {
+        // Start 20180517T090000
+        // Yearly with no BYxxx clauses with exdate without COUNT
+        let start = calendar.date(from: DateComponents(year: 2018, month: 5, day: 17, hour: 9))!
+        let exclusionDate = calendar.date(from: DateComponents(year: 2019, month: 5, day: 17, hour: 9))!
+        run(rule: "RRULE:FREQ=YEARLY", start: start, max: 3, exclusionDates: [exclusionDate], results:
+            ["2018-05-17T09:00:00", "2020-05-17T09:00:00", "2021-05-17T09:00:00"])
+    }
+
+    func testYearly41() {
+        // Start 20180517T090000
+        // Start day in February, April, and June of each year with exclusion dates
+        let start = calendar.date(from: DateComponents(year: 2018, month: 5, day: 17, hour: 9))!
+        let exclusionDates = [
+            calendar.date(from: DateComponents(year: 2019, month: 2, day: 17, hour: 9))!,
+            calendar.date(from: DateComponents(year: 2019, month: 4, day: 17, hour: 9))!
+        ]
+        run(rule: "RRULE:FREQ=YEARLY;BYMONTH=2,4,6;COUNT=8", start: start, exclusionDates: exclusionDates, results:
+            ["2018-05-17T09:00:00", "2018-06-17T09:00:00",
+             "2019-06-17T09:00:00", "2020-02-17T09:00:00", "2020-04-17T09:00:00", "2020-06-17T09:00:00",
+             "2021-02-17T09:00:00", "2021-04-17T09:00:00"]
+        )
+    }
+
+    func testYearly42() {
+        // Start 20180110T090000
+        // Every day in the last week of the year with exdates
+        let start = calendar.date(from: DateComponents(year: 2018, month: 1, day: 10, hour: 9))!
+        let exclusionDates = [
+            calendar.date(from: DateComponents(year: 2018, month: 12, day: 25, hour: 9))!,
+            calendar.date(from: DateComponents(year: 2024, month: 12, day: 29, hour: 9))!
+        ]
+        run(rule: "RRULE:FREQ=YEARLY;BYWEEKNO=-1;COUNT=43", start: start, exclusionDates: exclusionDates, results:
+            ["2018-01-10T09:00:00", "2018-12-24T09:00:00", "2018-12-26T09:00:00",
+             "2018-12-27T09:00:00", "2018-12-28T09:00:00", "2018-12-29T09:00:00", "2018-12-30T09:00:00",
+             "2019-12-23T09:00:00", "2019-12-24T09:00:00", "2019-12-25T09:00:00", "2019-12-26T09:00:00",
+             "2019-12-27T09:00:00", "2019-12-28T09:00:00", "2019-12-29T09:00:00", "2020-12-28T09:00:00",
+             "2020-12-29T09:00:00", "2020-12-30T09:00:00", "2020-12-31T09:00:00", "2021-12-27T09:00:00",
+             "2021-12-28T09:00:00", "2021-12-29T09:00:00", "2021-12-30T09:00:00", "2021-12-31T09:00:00",
+             "2022-12-26T09:00:00", "2022-12-27T09:00:00", "2022-12-28T09:00:00", "2022-12-29T09:00:00",
+             "2022-12-30T09:00:00", "2022-12-31T09:00:00", "2023-12-25T09:00:00", "2023-12-26T09:00:00",
+             "2023-12-27T09:00:00", "2023-12-28T09:00:00", "2023-12-29T09:00:00", "2023-12-30T09:00:00",
+             "2023-12-31T09:00:00", "2024-12-23T09:00:00", "2024-12-24T09:00:00", "2024-12-25T09:00:00",
+             "2024-12-26T09:00:00", "2024-12-27T09:00:00", "2024-12-28T09:00:00",
+             "2025-12-22T09:00:00"]
+        )
+    }
+
+    func testYearly42a() {
+        // Start 20180110T090000
+        // Every day in the 53rd week of the year
+        let start = calendar.date(from: DateComponents(year: 2018, month: 1, day: 10, hour: 9))!
+        let exclusionDates = [
+            calendar.date(from: DateComponents(year: 2019, month: 12, day: 30, hour: 9))!,
+            calendar.date(from: DateComponents(year: 2032, month: 12, day: 28, hour: 9))!
+        ]
+        run(rule: "RRULE:FREQ=YEARLY;BYWEEKNO=53;COUNT=23", start: start, exclusionDates: exclusionDates, results:
+            ["2018-01-10T09:00:00", "2018-12-31T09:00:00", "2019-12-31T09:00:00",
+             "2020-12-28T09:00:00", "2020-12-29T09:00:00", "2020-12-30T09:00:00", "2020-12-31T09:00:00",
+             "2024-12-30T09:00:00", "2024-12-31T09:00:00", "2025-12-29T09:00:00", "2025-12-30T09:00:00",
+             "2025-12-31T09:00:00", "2026-12-28T09:00:00", "2026-12-29T09:00:00", "2026-12-30T09:00:00",
+             "2026-12-31T09:00:00", "2029-12-31T09:00:00", "2030-12-30T09:00:00", "2030-12-31T09:00:00",
+             "2031-12-29T09:00:00", "2031-12-30T09:00:00", "2031-12-31T09:00:00", "2032-12-27T09:00:00"]
+        )
+    }
+
+    func testYearly43() {
+        // Start 20180517T090000
+        // Every day in the 2nd-to-last, 4th-to-last, and 6th-to-last week of the year with exdates
+        let start = calendar.date(from: DateComponents(year: 2018, month: 5, day: 17, hour: 9))!
+        let exclusionDates = [
+            calendar.date(from: DateComponents(year: 2018, month: 11, day: 20, hour: 9))!,
+            calendar.date(from: DateComponents(year: 2018, month: 12, day: 09, hour: 9))!,
+            calendar.date(from: DateComponents(year: 2019, month: 12, day: 09, hour: 9))! // not part of results
+        ]
+        run(rule: "RRULE:FREQ=YEARLY;BYWEEKNO=-2,-4,-6;COUNT=13", start: start, exclusionDates: exclusionDates, results:
+            ["2018-05-17T09:00:00", "2018-11-19T09:00:00", "2018-11-21T09:00:00",
+             "2018-11-22T09:00:00", "2018-11-23T09:00:00", "2018-11-24T09:00:00", "2018-11-25T09:00:00",
+             "2018-12-03T09:00:00", "2018-12-04T09:00:00", "2018-12-05T09:00:00", "2018-12-06T09:00:00",
+             "2018-12-07T09:00:00", "2018-12-08T09:00:00"]
+        )
+    }
+
+    func testYearly44() {
+        // Start 20180517T090000
+        // The 20th, 45th, and 160th day of each year (Jan 10, Feb 14, and Jun 8 or 9 (depending on leap year)) with exdate
+        let start = calendar.date(from: DateComponents(year: 2018, month: 5, day: 17, hour: 9))!
+        let exclusionDates = [
+            calendar.date(from: DateComponents(year: 2019, month: 01, day: 20, hour: 9))!,
+            calendar.date(from: DateComponents(year: 2020, month: 02, day: 14, hour: 9))!,
+            calendar.date(from: DateComponents(year: 2019, month: 12, day: 09, hour: 9))! // not part of results
+        ]
+        run(rule: "RRULE:FREQ=YEARLY;BYYEARDAY=20,45,160;COUNT=8", start: start, exclusionDates: exclusionDates, results:
+            ["2018-05-17T09:00:00", "2018-06-09T09:00:00", "2019-02-14T09:00:00",
+             "2019-06-09T09:00:00", "2020-01-20T09:00:00", "2020-06-08T09:00:00",
+             "2021-01-20T09:00:00", "2021-02-14T09:00:00"]
+        )
+    }
+
+    func testYearly45() {
+        // Start 20180517T090000
+        // The 20th, 45th, and 160th day of each year (Jan 10, Feb 14, and Jun 8 or 9 (depending on leap year)) with exdates
+        let start = calendar.date(from: DateComponents(year: 2018, month: 5, day: 17, hour: 9))!
+        let exclusionDates = [
+            calendar.date(from: DateComponents(year: 2019, month: 08, day: 04, hour: 9))!,
+            calendar.date(from: DateComponents(year: 2020, month: 12, day: 31, hour: 9))!,
+            calendar.date(from: DateComponents(year: 2019, month: 12, day: 09, hour: 9))! // not part of results
+        ]
+        run(rule: "RRULE:FREQ=YEARLY;BYYEARDAY=-1,-150;COUNT=8", start: start, exclusionDates: exclusionDates, results:
+            ["2018-05-17T09:00:00", "2018-08-04T09:00:00", "2018-12-31T09:00:00",
+             "2019-12-31T09:00:00", "2020-08-04T09:00:00", "2021-08-04T09:00:00",
+             "2021-12-31T09:00:00", "2022-08-04T09:00:00"]
+        )
+    }
+
     // TODO - there should be tests with the 5 combinations of 4 "BY" clauses and 1 with all 5 (not counting BYSETPOS)
 
     // With 4

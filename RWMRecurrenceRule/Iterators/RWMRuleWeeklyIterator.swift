@@ -124,9 +124,10 @@ class RWMRuleWeeklyIterator: RWMRuleIterator {
 
             // Send the current result
             var stop = false
-            if !isExclusionDate(date: result, calendar: calendar) {
+//            if !isExclusionDate(date: result, calendar: calendar) {
+            print(result)
                 block(result, &stop)
-            }
+//            }
             if (stop) {
                 done = true
             }

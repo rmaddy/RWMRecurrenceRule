@@ -149,9 +149,9 @@ class RWMWeeklyTests: RWMRecurrenceRuleBase {
     func testWeekly12() {
         // Start 20181117T090000
         // Weekly with with exdates.
-        let start = calendar.date(from: DateComponents(year: 2018, month: 11, day: 17, hour: 9))!
+        let start = calendar.date(from: DateComponents(year: 2019, month: 11, day: 17, hour: 9))!
         let exclusionDate = calendar.date(from: DateComponents(year: 2018, month: 11, day: 24, hour: 9))!
-        run(rule: "RRULE:FREQ=WEEKLY", start: start, max: 10, exclusionDates: [exclusionDate], results:
+        run(rule: "RRULE:FREQ=WEEKLY;COUNT=10", start: start, exclusionDates: [exclusionDate], results:
             ["2018-11-17T09:00:00", "2018-12-01T09:00:00", "2018-12-08T09:00:00", "2018-12-15T09:00:00",
              "2018-12-22T09:00:00", "2018-12-29T09:00:00", "2019-01-05T09:00:00", "2019-01-12T09:00:00",
              "2019-01-19T09:00:00", "2019-01-26T09:00:00"]

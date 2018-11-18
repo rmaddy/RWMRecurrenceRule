@@ -150,7 +150,6 @@ class RWMRuleMonthlyIterator: RWMRuleIterator {
                         break
                     } else {
                         result = monthDates[0]
-                        guard !isExclusionDate(date: result, calendar: calendar) else { continue }
                         dateIndex = 1
                     }
                 }

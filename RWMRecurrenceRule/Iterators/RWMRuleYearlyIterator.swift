@@ -24,7 +24,10 @@ class RWMRuleYearlyIterator: RWMRuleIterator {
         var year = startComps.year!
 
         let interval = (rule.interval ?? 1)
-        var count = 0
+        // Gets incremented on each iteration
+        var iterationCount = 0
+        // Gets incremented when callback block is executed
+        var recurrenceCount = 0
 
         var daysOfTheMonth = rule.daysOfTheMonth
         var monthsOfTheYear = rule.monthsOfTheYear
@@ -37,7 +40,6 @@ class RWMRuleYearlyIterator: RWMRuleIterator {
         repeat {
             if dateIndex < yearDates.count {
                 result = yearDates[dateIndex]
-                guard !isExclusionDate(date: result, calendar: calendar) else { continue }
                 dateIndex += 1
             } else {
                 var attempts = 0
@@ -216,7 +218,7 @@ class RWMRuleYearlyIterator: RWMRuleIterator {
                         yearDates = matches.sorted()
                     }
 
-                    if count == 0 {
+                    if iterationCount == 0 {
                         yearDates = yearDates.filter { $0 > start }
                         yearDates.insert(start, at: 0)
                         yearDates.sort()
@@ -230,7 +232,6 @@ class RWMRuleYearlyIterator: RWMRuleIterator {
                     break
                 } else {
                     result = yearDates[0]
-                    guard !isExclusionDate(date: result, calendar: calendar) else { continue }
                     dateIndex = 1
                 }
             }
@@ -242,16 +243,19 @@ class RWMRuleYearlyIterator: RWMRuleIterator {
                 }
             }
 
-            // Send the current result
-            var stop = false
-            block(result, &stop)
-            if (stop) {
-                break
+            if !isExclusionDate(date: result, calendar: calendar) {
+                // Send the current result
+                var stop = false
+                block(result, &stop)
+                if (stop) {
+                    break
+                }
+                recurrenceCount += 1
             }
-            count += 1
+            iterationCount += 1
 
-            if let stopCount = rule.recurrenceEnd?.count, stopCount > 0 {
-                if count >= stopCount {
+            if let expectedStopCount = rule.recurrenceEnd?.count, expectedStopCount > 0 {
+                if recurrenceCount >= expectedStopCount {
                     break
                 }
             }
