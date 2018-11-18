@@ -228,5 +228,80 @@ class RWMMonthlyTests: RWMRecurrenceRuleBase {
         )
     }
 
+    func testMonthly19() {
+        // Start 20180517T090000
+        // Monthly with exclusion dates
+        let start = calendar.date(from: DateComponents(year: 2018, month: 5, day: 17, hour: 9))!
+        let exclusionDate = calendar.date(from: DateComponents(year: 2018, month: 6, day: 17, hour: 9))!
+        run(rule: "RRULE:FREQ=MONTHLY;COUNT=3", start: start, exclusionDates: [exclusionDate], results:
+            ["2018-05-17T09:00:00", "2018-07-17T09:00:00", "2018-08-17T09:00:00"]
+        )
+    }
+
+    func testMonthly20() {
+        // Start 20180517T090000
+        // Monthly with exclusion date == start date with COUNT=10
+        let start = calendar.date(from: DateComponents(year: 2018, month: 5, day: 17, hour: 9))!
+        let exclusionDate = calendar.date(from: DateComponents(year: 2018, month: 5, day: 17, hour: 9))!
+        run(rule: "RRULE:FREQ=MONTHLY;COUNT=10", start: start, exclusionDates: [exclusionDate], results:
+            ["2018-06-17T09:00:00", "2018-07-17T09:00:00", "2018-08-17T09:00:00", "2018-09-17T09:00:00", "2018-10-17T09:00:00", "2018-11-17T09:00:00", "2018-12-17T09:00:00", "2019-01-17T09:00:00", "2019-02-17T09:00:00", "2019-03-17T09:00:00"]
+        )
+    }
+
+    func testMonthly21() {
+        // Start 20180517T090000
+        // Monthly with exclusion date == start date without COUNT
+        let start = calendar.date(from: DateComponents(year: 2018, month: 5, day: 17, hour: 9))!
+        let exclusionDate = calendar.date(from: DateComponents(year: 2018, month: 5, day: 17, hour: 9))!
+        run(rule: "RRULE:FREQ=MONTHLY", start: start, max: 5, exclusionDates: [exclusionDate], results:
+            ["2018-06-17T09:00:00", "2018-07-17T09:00:00", "2018-08-17T09:00:00", "2018-09-17T09:00:00", "2018-10-17T09:00:00"]
+        )
+    }
+
+    func testMonthly22() {
+        // Start 20180517T090000
+        // Monthly with exclusion date out of occrrences sequence
+        let start = calendar.date(from: DateComponents(year: 2018, month: 6, day: 17, hour: 9))!
+        let exclusionDate = calendar.date(from: DateComponents(year: 2018, month: 7, day: 1, hour: 9))!
+        run(rule: "RRULE:FREQ=MONTHLY", start: start, max: 5, exclusionDates: [exclusionDate], results:
+            ["2018-06-17T09:00:00", "2018-07-17T09:00:00", "2018-08-17T09:00:00", "2018-09-17T09:00:00", "2018-10-17T09:00:00"]
+        )
+    }
+
+    func testMonthly23() {
+        // Start 20180517T090000
+        // Monthly with multiple exclusion dates
+        let start = calendar.date(from: DateComponents(year: 2018, month: 5, day: 17, hour: 9))!
+        let exclusionDates = [
+            calendar.date(from: DateComponents(year: 2018, month: 5, day: 17, hour: 9))!,
+            calendar.date(from: DateComponents(year: 2018, month: 7, day: 17, hour: 9))!
+        ]
+        run(rule: "RRULE:FREQ=MONTHLY", start: start, max: 5, exclusionDates: exclusionDates, results:
+            ["2018-06-17T09:00:00", "2018-08-17T09:00:00", "2018-09-17T09:00:00", "2018-10-17T09:00:00", "2018-11-17T09:00:00"]
+        )
+    }
+
+    func testMonthly24() {
+        // Start 20180517T090000
+        // Each May and June with exclusion date in May
+        let start = calendar.date(from: DateComponents(year: 2018, month: 5, day: 17, hour: 9))!
+        let exclusionDate = calendar.date(from: DateComponents(year: 2018, month: 5, day: 17, hour: 9))!
+        run(rule: "RRULE:FREQ=MONTHLY;BYMONTH=5,6;COUNT=3", start: start, exclusionDates: [exclusionDate], results:
+            ["2018-06-17T09:00:00", "2019-05-17T09:00:00", "2019-06-17T09:00:00"]
+        )
+    }
+
+    func testMonthly25() {
+        // Start 20180517T090000
+        // 2nd, 4th, and 6th of March and May with exdate
+        let start = calendar.date(from: DateComponents(year: 2018, month: 5, day: 17, hour: 9))!
+        let exclusionDate = calendar.date(from: DateComponents(year: 2019, month: 3, day: 4, hour: 9))!
+        run(rule: "RRULE:FREQ=MONTHLY;BYMONTHDAY=2,4,6;BYMONTH=3,5;COUNT=10", start: start, exclusionDates: [exclusionDate], results:
+            ["2018-05-17T09:00:00", "2019-03-02T09:00:00", "2019-03-06T09:00:00",
+             "2019-05-02T09:00:00", "2019-05-04T09:00:00", "2019-05-06T09:00:00", "2020-03-02T09:00:00",
+             "2020-03-04T09:00:00", "2020-03-06T09:00:00", "2020-05-02T09:00:00"]
+        )
+    }
+
     // TODO - test BYSETPOS
 }
