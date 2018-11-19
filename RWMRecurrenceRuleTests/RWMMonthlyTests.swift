@@ -240,7 +240,7 @@ class RWMMonthlyTests: RWMRecurrenceRuleBase {
             calendar.date(from: DateComponents(year: 2019, month: 5, day: 25, hour: 9))! // not part of results
         ]
         run(rule: "RRULE:FREQ=MONTHLY;COUNT=3", start: start, exclusionDates: exclusionDates, results:
-            ["2018-06-17T09:00:00", "2018-06-17T09:00:00", "2018-09-17T09:00:00"]
+            ["2018-06-17T09:00:00", "2018-08-17T09:00:00", "2018-09-17T09:00:00"]
         )
     }
 
@@ -313,7 +313,7 @@ class RWMMonthlyTests: RWMRecurrenceRuleBase {
             calendar.date(from: DateComponents(year: 2018, month: 7, day: 4, hour: 9))!,
             calendar.date(from: DateComponents(year: 2019, month: 5, day: 25, hour: 9))! // not part of results
         ]
-        run(rule: "RRULE:FREQ=MONTHLY;BYMONTHDAY=2,4,6;INTERVAL=2;COUNT=8", start: start, results:
+        run(rule: "RRULE:FREQ=MONTHLY;BYMONTHDAY=2,4,6;INTERVAL=2;COUNT=8", start: start, exclusionDates: exclusionDates, results:
             ["2018-07-02T09:00:00", "2018-07-06T09:00:00",
              "2018-09-02T09:00:00", "2018-09-04T09:00:00", "2018-09-06T09:00:00", "2018-11-02T09:00:00",
              "2018-11-04T09:00:00", "2018-11-06T09:00:00"]
@@ -329,7 +329,7 @@ class RWMMonthlyTests: RWMRecurrenceRuleBase {
             calendar.date(from: DateComponents(year: 2018, month: 8, day: 31, hour: 9))!,
             calendar.date(from: DateComponents(year: 2019, month: 5, day: 25, hour: 9))! // not part of results
         ]
-        run(rule: "RRULE:FREQ=MONTHLY;BYMONTHDAY=2,-1;INTERVAL=3;COUNT=10", start: start, exclusionDates: exclusionDates, results:
+        run(rule: "RRULE:FREQ=MONTHLY;BYMONTHDAY=2,-1;INTERVAL=3;COUNT=8", start: start, exclusionDates: exclusionDates, results:
             ["2018-05-31T09:00:00", "2018-08-02T09:00:00",
              "2018-11-02T09:00:00", "2018-11-30T09:00:00", "2019-02-02T09:00:00", "2019-02-28T09:00:00",
              "2019-05-02T09:00:00", "2019-05-31T09:00:00"]
@@ -395,7 +395,7 @@ class RWMMonthlyTests: RWMRecurrenceRuleBase {
         ]
         run(rule: "RRULE:FREQ=MONTHLY;BYDAY=1MO,-1FR;INTERVAL=2;COUNT=8", start: start, exclusionDates: exclusionDates, results:
             ["2018-05-25T09:00:00", "2018-07-02T09:00:00", "2018-07-27T09:00:00",
-             "2018-09-03T09:00:00", "2018-09-28T09:00:00", "2018-11-05T09:00:00", "2018-11-30T09:00:00",
+             "2018-09-03T09:00:00", "2018-11-05T09:00:00", "2018-11-30T09:00:00",
              "2019-01-07T09:00:00", "2019-01-25T09:00:00"]
         )
     }
@@ -426,8 +426,8 @@ class RWMMonthlyTests: RWMRecurrenceRuleBase {
             calendar.date(from: DateComponents(year: 2019, month: 5, day: 25, hour: 9))! // not part of results
         ]
         run(rule: "RRULE:FREQ=MONTHLY;BYMONTH=6;BYMONTHDAY=2,-1;COUNT=8", start: start, exclusionDates: exclusionDates, results:
-            ["2018-06-02T09:00:00", "2019-06-02T09:00:00",
-             "2019-06-30T09:00:00", "2020-06-02T09:00:00", "2020-06-30T09:00:00", "2021-06-02T09:00:00",
+            ["2018-06-02T09:00:00", "2018-06-30T09:00:00", "2019-06-02T09:00:00",
+             "2020-06-02T09:00:00", "2020-06-30T09:00:00", "2021-06-02T09:00:00",
              "2021-06-30T09:00:00", "2022-06-02T09:00:00"]
         )
     }
@@ -491,7 +491,7 @@ class RWMMonthlyTests: RWMRecurrenceRuleBase {
             calendar.date(from: DateComponents(year: 2018, month: 9, day: 11, hour: 9))!,
             calendar.date(from: DateComponents(year: 2019, month: 5, day: 25, hour: 9))! // not part of results
         ]
-        run(rule: "RRULE:FREQ=MONTHLY;BYDAY=TU,TH;BYMONTHDAY=10,11,12,13,14;COUNT=10", start: start, exclusionDates: exclusionDates, results:
+        run(rule: "RRULE:FREQ=MONTHLY;BYDAY=TU,TH;BYMONTHDAY=10,11,12,13,14;COUNT=8", start: start, exclusionDates: exclusionDates, results:
             ["2018-06-12T09:00:00", "2018-06-14T09:00:00", "2018-07-10T09:00:00",
              "2018-07-12T09:00:00", "2018-08-14T09:00:00", "2018-09-13T09:00:00",
              "2018-10-11T09:00:00", "2018-11-13T09:00:00"]
@@ -523,7 +523,7 @@ class RWMMonthlyTests: RWMRecurrenceRuleBase {
             calendar.date(from: DateComponents(year: 2019, month: 3, day: 3, hour: 9))!,
             calendar.date(from: DateComponents(year: 2019, month: 5, day: 25, hour: 9))! // not part of results
         ]
-        run(rule: "RRULE:FREQ=MONTHLY;BYMONTH=1,2,3;BYMONTHDAY=1,2,3;BYDAY=SU,MO,TU;COUNT=10", start: start, exclusionDates: exclusionDates, results:
+        run(rule: "RRULE:FREQ=MONTHLY;BYMONTH=1,2,3;BYMONTHDAY=1,2,3;BYDAY=SU,MO,TU;COUNT=8", start: start, exclusionDates: exclusionDates, results:
             ["2019-01-01T09:00:00", "2019-02-03T09:00:00",
              "2020-02-02T09:00:00", "2020-02-03T09:00:00", "2020-03-01T09:00:00", "2020-03-02T09:00:00",
              "2020-03-03T09:00:00", "2021-01-03T09:00:00"]

@@ -60,7 +60,10 @@ class RWMRuleWeeklyIterator: RWMRuleIterator {
 
         // 7 days per interval
         let interval = (rule.interval ?? 1) * 7
-        var count = 0
+        // Gets incremented on each iteration
+        var iterationCount = 0
+        // Gets incremented when callback block is executed
+        var recurrenceCount = 0
         var done = false
         repeat {
             if dateIndex < weekDates.count {
@@ -83,7 +86,7 @@ class RWMRuleWeeklyIterator: RWMRuleIterator {
                         }
                     }
 
-                    if count == 0 {
+                    if iterationCount == 0 {
                         weekDates = weekDates.filter { $0 > start }
                         weekDates.insert(start, at: 0)
                     }
@@ -122,20 +125,20 @@ class RWMRuleWeeklyIterator: RWMRuleIterator {
                 }
             }
 
-            // Send the current result
-            var stop = false
-//            if !isExclusionDate(date: result, calendar: calendar) {
-            print(result)
+            if !isExclusionDate(date: result, calendar: calendar) {
+                // Send the current result
+                var stop = false
                 block(result, &stop)
-//            }
-            if (stop) {
-                done = true
+                if (stop) {
+                    break
+                }
+                recurrenceCount += 1
             }
-            count += 1
+            iterationCount += 1
 
-            if let stopCount = rule.recurrenceEnd?.count, stopCount > 0 {
-                if count >= stopCount {
-                    done = true
+            if let expectedStopCount = rule.recurrenceEnd?.count, expectedStopCount > 0 {
+                if recurrenceCount >= expectedStopCount {
+                    break
                 }
             }
         } while !done
