@@ -139,6 +139,8 @@ public class RWMRuleParser {
             case "BYSECOND":
                 return nil
                  */
+            case "DTSTART":
+                break
             default:
                 return nil
             }
