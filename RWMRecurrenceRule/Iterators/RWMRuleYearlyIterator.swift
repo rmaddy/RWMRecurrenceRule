@@ -53,7 +53,7 @@ class RWMRuleYearlyIterator: RWMRuleIterator {
                         let lastDayOfYear = calendar.date(from: DateComponents(year: year, month: 12, day: 31))!
                         let lastWeek = calendar.component(.weekOfYear, from: lastDayOfYear)
                         let weeksRange = calendar.range(of: .weekOfYear, in: .yearForWeekOfYear, for: startOfYear)!
-                        let weeksInYear = lastWeek == 1 ? CountableRange(weeksRange).last! : lastWeek
+                        let weeksInYear = lastWeek == 1 ? weeksRange.last! : lastWeek
                         var weekComps = DateComponents(/*year: year, */hour: yearComps.hour!, minute: yearComps.minute!, second: yearComps.second!, yearForWeekOfYear: year)
                         weekComps.weekday = rule.firstDayOfTheWeek?.rawValue ?? calendar.firstWeekday
                         for weekNo in weekNos {
@@ -127,7 +127,7 @@ class RWMRuleYearlyIterator: RWMRuleIterator {
                                         days = [startDay]
                                     } else {
                                         let range = calendar.range(of: .day, in: .month, for: startOfMonth)!
-                                        days = Array(CountableRange(range).indices)
+                                        days = Array(range.indices)
                                     }
                                     for day in days {
                                         monthComps.day = day
