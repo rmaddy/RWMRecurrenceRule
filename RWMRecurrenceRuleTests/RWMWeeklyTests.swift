@@ -145,4 +145,22 @@ class RWMWeeklyTests: RWMRecurrenceRuleBase {
              "2028-06-06T09:00:00", "2028-06-27T09:00:00", "2029-06-19T09:00:00", "2030-06-11T09:00:00"]
         )
     }
+    
+    func testWeekly12() {
+        // Start 20201006T090000
+        let start = calendar.date(from: DateComponents(year: 2020, month: 10, day: 06, hour: 09, minute: 00))!
+        run(rule: "RRULE:FREQ=WEEKLY;UNTIL=20201031T000000Z;INTERVAL=2;BYDAY=MO,TU,WE,TH,FR,SA", start: start, results:
+            ["2020-10-06T09:00:00", // TU
+             "2020-10-07T09:00:00", // WE
+             "2020-10-08T09:00:00", // TH
+             "2020-10-09T09:00:00", // FR
+             "2020-10-10T09:00:00", // SA
+             "2020-10-19T09:00:00", // SA
+             "2020-10-20T09:00:00", // TU
+             "2020-10-21T09:00:00", // WE
+             "2020-10-22T09:00:00", // TH
+             "2020-10-23T09:00:00", // FR
+             "2020-10-24T09:00:00"] // SA
+        )
+    }
 }

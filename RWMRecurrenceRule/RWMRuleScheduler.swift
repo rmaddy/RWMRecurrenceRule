@@ -148,10 +148,9 @@ public class RWMRuleScheduler {
                 // If WKST is Monday then index 0=Mon, 1=Tue, 2=Wed, ..., 6=Sun
                 let firstDayOfTheWeek = rule.firstDayOfTheWeek?.rawValue ?? calendar.firstWeekday
                 // Convert the standard 1=Sun,2=Mon,...,7=Sat values into the associated weekday index based on the first day of the week
-                for wd in firstDayOfTheWeek..<(firstDayOfTheWeek + 7) {
-                    if daysOfTheWeek.first(where: { $0 == wd % 7 }) != nil {
-                        weekdays.append(wd - firstDayOfTheWeek)
-                    }
+                weekdays = daysOfTheWeek.map { day in
+                    let index = (day - firstDayOfTheWeek) % 7
+                    return index < 0 ? 7 + index : index
                 }
             } else {
                 sow = start
